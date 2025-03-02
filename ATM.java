@@ -236,10 +236,13 @@
                     pin = sc.nextInt();
                 } catch (InputMismatchException e) {
                     System.out.println("ONLY NUMBERS ARE ALLOWED");
-                    System.out.println("---------------------------------------------------------------------\n");
                     sc.nextLine();
                 }
-                if(((int) Math.log10(pin)+1)!=4) System.out.println("YOUR PIN MUST BE 4 in LENGTH..");
+                if(((int) Math.log10(pin)+1)!=4)
+                {
+                    System.out.println("YOUR PIN MUST BE 4 in LENGTH..");
+                    pin=10000;
+                }
                 System.out.println("---------------------------------------------------------------------\n");
             }
             customer_det[bnk_id][customer_cnt[bnk_id]++] = new Customer(name, pin);
